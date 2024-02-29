@@ -31,7 +31,7 @@ public class Profesor {
     private String apellidoMaterno;
 
     @NotNull
-    @Column(name = "edad_profesor",length = 255)
+    @Column(name = "edad_profesor",length = 10)
     private int edad;
 
     @NotNull

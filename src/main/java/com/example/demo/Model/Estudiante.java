@@ -33,7 +33,7 @@ public class Estudiante
     private String apellidoMaterno;
 
     @NotNull
-    @Column(name = "edad_estudiante",length = 255)
+    @Column(name = "edad_estudiante",length = 10)
     private int edad;
 
     @NotNull
