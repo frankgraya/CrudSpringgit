@@ -1,4 +1,4 @@
 package com.example.demo.Model;
 
-public class Animal {
+public class Animak {
 }
