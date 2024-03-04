@@ -24,4 +24,7 @@ public class Equipo
 
     @OneToMany(targetEntity = Jugador.class, mappedBy = "equipo", fetch = FetchType.LAZY)// Relacion uno a muchos con jugador
     private List<Jugador> jugadores;
+
+    @ManyToOne(targetEntity = FederacionFutbol.class)
+    private FederacionFutbol federacionFutbol;
 }
