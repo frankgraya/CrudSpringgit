@@ -1,6 +1,7 @@
 package com.example.demo.Model.Futbol;
 import lombok.*;
 import javax.persistence.*;
+import java.util.List;
 
 @Data // Anotación de Lombok para generar automáticamente getters, setters, toString, equals, hashCode
 @AllArgsConstructor // Genera un constructor con todos los argumentos
@@ -20,4 +21,7 @@ public class Equipo
 
     @OneToOne(targetEntity = Entrenador.class) // Establece una relación uno a uno con la clase Entrenador
     private Entrenador entrenador; // Entrenador del equipo
+
+    @OneToMany(targetEntity = Jugador.class, mappedBy = "equipo", fetch = FetchType.LAZY)// Relacion uno a muchos con jugador
+    private List<Jugador> jugadores;
 }
