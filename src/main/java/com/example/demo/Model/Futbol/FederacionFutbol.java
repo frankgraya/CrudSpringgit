@@ -19,15 +19,16 @@ public class FederacionFutbol
     private Long id;
 
     @Column(columnDefinition = "VARCHAR(100)", nullable = false) // Especifica las propiedades de la columna en la base de datos
-    private String nombre; // Nombre del equipo
+    private String nombre; // Nombre de la federacion
 
     @Column(columnDefinition = "VARCHAR(100)", nullable = false) // Especifica las propiedades de la columna en la base de datos
-    private String presidente; // Nombre del equipo
+    private String presidente; // Presidente de la federacion
 
     @Column(columnDefinition = "VARCHAR(100)", nullable = false) // Especifica las propiedades de la columna en la base de datos
-    private String pais; // Nombre del equipo
+    private String pais; // Pais de la federacion
 
-    @OneToMany(targetEntity = Equipo.class, mappedBy = "federacionFutbol", fetch = FetchType.LAZY)// Relacion uno a muchos con equipo
+    // Relacion uno a muchos con equipo
+    @OneToMany(targetEntity = Equipo.class, mappedBy = "federacionFutbol", fetch = FetchType.LAZY)
     private List<Equipo> equipos;
 
 }

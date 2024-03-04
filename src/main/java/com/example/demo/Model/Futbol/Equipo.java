@@ -25,6 +25,15 @@ public class Equipo
     @OneToMany(targetEntity = Jugador.class, mappedBy = "equipo", fetch = FetchType.LAZY)// Relacion uno a muchos con jugador
     private List<Jugador> jugadores;
 
-    @ManyToOne(targetEntity = FederacionFutbol.class)
+    @ManyToOne(targetEntity = FederacionFutbol.class) // Relacion de Muchos a uno con federacion
     private FederacionFutbol federacionFutbol;
+
+    // Relacion de Muchos a Muchos con ligas de futbol
+    @ManyToMany(targetEntity = LigaFutbol.class, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "equipo_liga",
+            joinColumns = @JoinColumn(name = "equipo"),
+            inverseJoinColumns = @JoinColumn(name = "liga")
+    )
+    private List<LigaFutbol> Ligas;
 }
